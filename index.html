@@ -17,15 +17,22 @@
 <body>
 
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">L.C. Chiavini</a>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#livros">Livros</a></li>
-                <li><a href="https://www.instagram.com/luizclaudiochiavini/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
-            </ul>
+    <div class="container nav-container">
+        <a href="#" class="logo">L.C. Chiavini</a>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-    </nav>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+            <li><a href="#livros" onclick="closeMenu()">Livros</a></li>
+            <li><a href="https://www.instagram.com/luizclaudiochiavini/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+</nav>
 
     <header class="hero">
         <div class="hero-overlay"></div>
@@ -137,4 +144,5 @@
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
