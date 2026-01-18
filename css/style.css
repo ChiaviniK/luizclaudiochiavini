@@ -25,7 +25,7 @@ body {
     background-color: var(--bg-offwhite);
     color: var(--text-main);
     line-height: 1.7;
-    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -36,7 +36,7 @@ body {
     top: 0; width: 100%;
     padding: 1rem 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.98); /* Quase sólido para leitura */
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     transition: all 0.3s ease;
@@ -68,7 +68,7 @@ body {
 
 /* Botão Hambúrguer (Mobile) */
 .hamburger {
-    display: none; /* Escondido no PC */
+    display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
@@ -80,7 +80,6 @@ body {
     transition: all 0.3s ease;
     border-radius: 2px;
 }
-/* Animação do X no menu */
 .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .hamburger.active .bar:nth-child(2) { opacity: 0; }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -141,13 +140,14 @@ body {
 }
 .btn-outline:hover { background: var(--wine-light); color: #fff; }
 
-/* Foto do Autor (Minimalista & Profissional) */
+/* --- FOTO DO AUTOR CORRIGIDA --- */
 .hero-img-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
     position: relative;
     z-index: 10;
+    /* REMOVIDO: qualquer pseudo-elemento ::after que causava o arco */
 }
 
 .author-photo {
@@ -156,22 +156,20 @@ body {
     object-fit: cover;
     border-radius: 50%; /* Círculo Perfeito */
     
-    /* Sem bordas, apenas sombra difusa elegante */
+    /* Sem bordas */
     border: none;
+    
+    /* Sombra suave e colorida */
     box-shadow: 
         0 10px 30px rgba(0,0,0,0.1), 
-        0 30px 60px rgba(74, 14, 18, 0.2); /* Aura Vinho Suave */
+        0 30px 60px rgba(74, 14, 18, 0.2);
     
-    /* Começa Preto e Branco (Opcional - remova se preferir colorido sempre) */
-    filter: grayscale(100%);
-    opacity: 0.95;
+    /* REMOVIDO: filter: grayscale(100%); -> Agora é colorida sempre */
     
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .author-photo:hover {
-    filter: grayscale(0%); /* Fica colorido */
-    opacity: 1;
     transform: translateY(-10px) scale(1.02);
     box-shadow: 
         0 20px 40px rgba(0,0,0,0.15),
@@ -179,21 +177,12 @@ body {
 }
 
 /* =========================================
-   SEÇÕES GERAIS
-   ========================================= */
-.section-header { text-align: center; margin-bottom: 4rem; margin-top: 4rem; }
-.section-header h2 {
-    font-family: var(--font-serif); font-size: 2.5rem; color: var(--wine-dark);
-}
-.separator {
-    width: 60px; height: 3px; background: var(--gold);
-    margin: 1rem auto;
-}
-
-/* =========================================
    GRID DE LIVROS
    ========================================= */
 .books-section { padding-bottom: 4rem; }
+.section-header { text-align: center; margin-bottom: 4rem; margin-top: 4rem; }
+.section-header h2 { font-family: var(--font-serif); font-size: 2.5rem; color: var(--wine-dark); }
+.separator { width: 60px; height: 3px; background: var(--gold); margin: 1rem auto; }
 
 .books-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -211,16 +200,11 @@ body {
 .book-cover-3d {
     height: 300px; margin-bottom: 1.5rem;
     display: flex; justify-content: center;
-    filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.2)); /* Sombra 3D */
+    filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.2));
 }
-.book-cover-3d img {
-    height: 100%; width: auto; max-width: 100%;
-    border-radius: 2px 5px 5px 2px;
-}
+.book-cover-3d img { height: 100%; width: auto; max-width: 100%; border-radius: 2px 5px 5px 2px; }
 
-.book-details h3 {
-    font-family: var(--font-serif); color: var(--wine-dark); margin-bottom: 0.5rem;
-}
+.book-details h3 { font-family: var(--font-serif); color: var(--wine-dark); margin-bottom: 0.5rem; }
 .book-details p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem; }
 
 .book-actions {
@@ -248,13 +232,11 @@ footer {
     background: var(--wine-dark); color: #fff;
     padding: 3rem 0; text-align: center; margin-top: 5rem;
 }
-.footer-logo {
-    font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem; color: var(--gold);
-}
+.footer-logo { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem; color: var(--gold); }
 .footer-social a { color: var(--gold); text-decoration: none; margin-top: 1rem; display: inline-block; }
 
 /* =========================================
-   MODAL
+   MODAL E ANIMAÇÕES
    ========================================= */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(5px); }
 .modal-content {
@@ -265,9 +247,6 @@ footer {
 .modal-body { padding: 2rem; font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8; color: #333; }
 .close { position: absolute; right: 20px; top: 15px; font-size: 2rem; cursor: pointer; color: var(--text-light); }
 
-/* =========================================
-   ANIMAÇÕES
-   ========================================= */
 .hidden-element { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .show-element { opacity: 1; transform: translateY(0); }
 
@@ -275,45 +254,36 @@ footer {
    RESPONSIVIDADE (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
-    
-    /* Menu Lateral (Drawer) */
     .hamburger { display: flex; }
     
     .nav-links {
         position: fixed; right: -100%; top: 0;
-        height: 100vh; width: 75%;
-        background: #fff;
+        height: 100vh; width: 75%; background: #fff;
         flex-direction: column; justify-content: center;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: right 0.4s ease;
-        z-index: 1000;
+        transition: right 0.4s ease; z-index: 1000;
     }
     .nav-links.active { right: 0; }
     .nav-links li { margin: 1.5rem 0; }
     .nav-links a { font-size: 1.2rem; font-weight: 700; color: var(--wine-dark); }
 
-    /* Hero */
     .hero { padding-top: 100px; padding-bottom: 3rem; }
     .hero-content { flex-direction: column-reverse; text-align: center; gap: 2rem; }
     .hero-text h1 { font-size: 2.2rem; }
-    
     .hero-btns { flex-direction: column; width: 100%; }
     .btn { width: 100%; display: block; text-align: center; }
 
-    /* Foto Mobile */
     .author-photo {
         width: 260px; height: 260px;
         margin-bottom: 1rem;
-        filter: grayscale(0%); /* Sempre colorido no celular */
+        /* GARANTIDO: colorido e sem arcos */
     }
 
-    /* Livros */
     .books-grid { grid-template-columns: 1fr; gap: 2rem; }
     .book-cover-3d { height: 250px; }
     .book-actions { flex-direction: column; gap: 1rem; }
     .book-actions button, .book-actions a { width: 100%; text-align: center; padding: 0.8rem; }
     .btn-text { border: 1px solid var(--wine-light); border-radius: 4px; padding: 0.6rem; }
     
-    /* Modal */
     .close { font-size: 2.5rem; background: rgba(255,255,255,0.9); width: 40px; height: 40px; text-align: center; line-height: 40px; border-radius: 50%; }
 }
