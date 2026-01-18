@@ -38,4 +38,21 @@ const observer = new IntersectionObserver((entries) => {
 // Seleciona todos os elementos com a classe hidden-element
 document.querySelectorAll('.hidden-element').forEach((el) => {
     observer.observe(el);
+
 });
+
+// --- Lógica do Menu Mobile ---
+const hamburger = document.getElementById('hamburger-btn');
+const navLinks = document.getElementById('nav-links');
+
+// Abrir/Fechar ao clicar no ícone
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Faz o menu deslizar
+    hamburger.classList.toggle('active'); // Transforma os riscos em X
+});
+
+// Fechar menu ao clicar em um link (para a navegação fluir)
+function closeMenu() {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+}
