@@ -1,0 +1,214 @@
+:root {
+    /* Cores Premium */
+    --wine-dark: #4a0e12;      /* Vinho muito escuro */
+    --wine-light: #7a1c22;     /* Vinho avermelhado */
+    --gold: #d4af37;           /* Dourado clássico */
+    --gold-light: #f3e5ab;     /* Dourado pálido para fundos */
+    --text-main: #2c2c2c;
+    --text-light: #666;
+    --bg-offwhite: #fdfbf7;    /* Cor de papel de livro antigo */
+    
+    /* Fontes */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+/* Reset e Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-offwhite);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Navegação Glassmorphism */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.nav-container {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+}
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--wine-dark);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+    text-decoration: none; color: var(--text-main);
+    font-weight: 400; font-size: 0.95rem;
+    transition: color 0.3s;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.nav-links a:hover { color: var(--wine-light); }
+.social-icon { color: var(--wine-light) !important; font-size: 1.2rem; }
+
+/* Hero Section */
+.hero {
+    min-height: 90vh; /* Ocupa quase a tela toda */
+    display: flex; align-items: center;
+    background: linear-gradient(135deg, #fdfbf7 50%, #f4eee0 100%);
+    position: relative;
+    padding-top: 80px;
+}
+.hero-content {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; width: 100%;
+}
+.hero-text { flex: 1; max-width: 600px; }
+.tagline {
+    color: var(--gold); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;
+    display: block; margin-bottom: 1rem;
+}
+.hero-text h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem; line-height: 1.1;
+    color: var(--wine-dark); margin-bottom: 1.5rem;
+}
+.hero-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; }
+
+.hero-btns { display: flex; gap: 1rem; }
+.btn {
+    padding: 1rem 2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 700;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+.btn-primary {
+    background: var(--wine-light); color: #fff;
+    box-shadow: 0 10px 20px rgba(122, 28, 34, 0.2);
+}
+.btn-primary:hover { background: var(--wine-dark); transform: translateY(-2px); }
+.btn-outline {
+    border: 2px solid var(--wine-light); color: var(--wine-light);
+}
+.btn-outline:hover { background: var(--wine-light); color: #fff; }
+
+.hero-img-wrapper {
+    position: relative;
+}
+.author-photo {
+    width: 350px; height: 350px; object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+/* Círculo decorativo dourado atrás da foto */
+.hero-img-wrapper::before {
+    content: ''; position: absolute;
+    top: -20px; right: -20px; bottom: -20px; left: -20px;
+    border: 2px solid var(--gold);
+    border-radius: 50%; z-index: -1;
+    opacity: 0.6;
+}
+
+/* Seções Gerais */
+.section-header { text-align: center; margin-bottom: 4rem; margin-top: 4rem; }
+.section-header h2 {
+    font-family: var(--font-serif); font-size: 2.5rem; color: var(--wine-dark);
+}
+.separator {
+    width: 60px; height: 3px; background: var(--gold);
+    margin: 1rem auto;
+}
+
+/* Grid de Livros Sofisticado */
+.books-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem; max-width: 1200px; margin: 0 auto 5rem; padding: 0 20px;
+}
+.book-card {
+    background: #fff; border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+.book-card:hover { transform: translateY(-10px); }
+
+.book-cover-3d {
+    height: 300px; margin-bottom: 1.5rem;
+    display: flex; justify-content: center;
+    position: relative;
+    /* Efeito de sombra 3D no livro */
+    filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.2));
+}
+.book-cover-3d img {
+    height: 100%; width: auto; max-width: 100%;
+    border-radius: 2px 5px 5px 2px;
+}
+
+.book-details h3 {
+    font-family: var(--font-serif); color: var(--wine-dark); margin-bottom: 0.5rem;
+}
+.book-details p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem; }
+
+.book-actions {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid #eee; padding-top: 1rem;
+}
+.btn-text {
+    background: none; border: none; cursor: pointer;
+    font-family: var(--font-sans); font-weight: 700;
+    color: var(--wine-light); font-size: 0.9rem;
+}
+.btn-shop {
+    background: var(--gold); color: #fff;
+    padding: 0.5rem 1.2rem; border-radius: 4px;
+    text-decoration: none; font-size: 0.85rem; font-weight: 700;
+    transition: background 0.3s;
+}
+.btn-shop:hover { background: #bfa348; }
+
+/* Animação Scroll Reveal */
+.hidden-element {
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.show-element { opacity: 1; transform: translateY(0); }
+
+/* Footer */
+footer {
+    background: var(--wine-dark); color: #fff;
+    padding: 3rem 0; text-align: center;
+}
+.footer-logo {
+    font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem; color: var(--gold);
+}
+.footer-social a { color: var(--gold); text-decoration: none; font-size: 0.9rem; margin-top: 1rem; display: inline-block;}
+
+/* Modal (Estilo Limpo) */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(5px); }
+.modal-content {
+    background: #fff; margin: 5% auto; width: 90%; max-width: 700px;
+    border-radius: 8px; position: relative; max-height: 85vh; overflow-y: auto;
+}
+.modal-header {
+    background: var(--bg-offwhite); padding: 1.5rem; border-bottom: 1px solid #eee;
+}
+.modal-body { padding: 2rem; font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8; color: #333; }
+.close { position: absolute; right: 20px; top: 15px; font-size: 2rem; cursor: pointer; color: var(--text-light); }
+
+/* Mobile Responsividade */
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column-reverse; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-btns { justify-content: center; }
+    .author-photo { width: 200px; height: 200px; margin-bottom: 2rem; }
+}
