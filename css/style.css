@@ -329,3 +329,58 @@ footer {
         border-radius: 50%;
     }
 }
+
+
+
+/* --- SUBSTITUA NO CSS PRINCIPAL --- */
+
+/* O wrapper não precisa mais de posição relativa pois removemos o anel decorativo */
+.hero-img-wrapper {
+    /* position: relative;  <-- REMOVIDO */
+}
+
+.author-photo {
+    width: 380px; /* Um pouco mais largo para presença */
+    height: auto; /* Altura automática para não distorcer a foto original */
+    max-height: 450px; /* Limite de altura para não ficar gigante */
+    object-fit: cover;
+    border-radius: 4px; /* Canto levemente arredondado para suavizar, não é bola */
+    border: 12px solid #fff; /* Moldura branca grossa e elegante */
+    /* Sombra mais marcada para dar profundidade de "quadro na parede" */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 15px rgba(0,0,0,0.05);
+    transform: rotate(-2deg); /* Um leve toque de design: inclinação sutil */
+    transition: all 0.3s ease;
+}
+
+/* Efeito interativo: endireita quando passa o mouse */
+.author-photo:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* REMOVA COMPLETAMENTE O BLOCO ABAIXO DO SEU CSS */
+/*
+.hero-img-wrapper::before {
+    content: ''; position: absolute;
+    ... (tudo isso sai)
+}
+*/
+
+/* --- ATUALIZE DENTRO DO @MEDIA (max-width: 768px) --- */
+
+@media (max-width: 768px) {
+    /* ... outros estilos ... */
+
+    .author-photo {
+        width: 260px; /* Tamanho bom para celular */
+        height: auto;
+        max-height: 350px;
+        border-width: 8px; /* Moldura um pouco mais fina no mobile */
+        margin-bottom: 2rem;
+        transform: rotate(0deg); /* Sem inclinação no celular para economizar espaço */
+    }
+
+    /* REMOVA A LINHA ABAIXO SE ELA AINDA ESTIVER LÁ */
+    /* .hero-img-wrapper::before { top: -10px; right: -10px; bottom: -10px; left: -10px; } */
+
+    /* ... restante dos estilos mobile ... */
+}
