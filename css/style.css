@@ -552,3 +552,77 @@ footer {
         border-width: 4px; /* Borda um pouco mais fina */
     }
 }
+
+
+
+/* --- HERO IMAGE: EDITORIAL STYLE --- */
+
+.hero-img-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.author-photo {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* Garante o corte perfeito */
+    border-radius: 50%; /* Círculo perfeito */
+    
+    /* O segredo do profissionalismo: SEM bordas, apenas luz e sombra */
+    border: none;
+    
+    /* Sombra dupla: uma pequena para definição, uma grande para "flutuar" */
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.1), /* Definição */
+        0 30px 60px rgba(74, 14, 18, 0.2); /* Aura cor Vinho suave */
+    
+    /* Efeito de Estilo: Começa preto e branco (sério) */
+    filter: grayscale(100%);
+    opacity: 0.95;
+    
+    /* Transição suave de cinema */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Interação Elegante */
+.author-photo:hover {
+    filter: grayscale(0%); /* Ganha cor e vida */
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02); /* Sobe levemente */
+    
+    /* A sombra aumenta quando sobe */
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.15),
+        0 45px 80px rgba(74, 14, 18, 0.3);
+}
+
+/* --- ELEMENTO DECORATIVO SUTIL (Opcional) --- */
+/* Um brilho muito leve atrás da foto para destacar do fundo */
+.hero-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+    z-index: -1; /* Fica atrás da foto */
+}
+
+/* --- MOBILE RESPONSIVO --- */
+@media (max-width: 768px) {
+    .author-photo {
+        width: 260px;
+        height: 260px;
+        filter: grayscale(0%); /* No celular, mantemos colorido sempre */
+        margin-bottom: 2rem;
+    }
+    
+    /* Ajusta o brilho de fundo para o tamanho mobile */
+    .hero-img-wrapper::after {
+        width: 270px; height: 270px;
+    }
+}
