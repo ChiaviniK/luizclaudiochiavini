@@ -384,3 +384,53 @@ footer {
 
     /* ... restante dos estilos mobile ... */
 }
+
+
+
+/* --- ATUALIZE ESTAS CLASSES NO SEU CSS --- */
+
+.hero-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Centraliza tudo na tela */
+    padding: 0 20px; 
+    width: 100%;
+    text-align: center; /* Texto centralizado */
+}
+
+.hero-text { 
+    flex: none; /* Remove comportamento flex anterior */
+    width: 100%;
+    max-width: 900px; /* Permite que o texto fique mais largo */
+}
+
+.hero-text h1 {
+    font-family: var(--font-serif);
+    font-size: 4.5rem; /* Aumentei o tamanho para dar impacto sem a foto */
+    line-height: 1.1;
+    color: var(--wine-dark); 
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.3rem; /* Texto de apoio um pouco maior */
+    color: var(--text-light); 
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btns { 
+    display: flex; 
+    gap: 1.5rem; 
+    justify-content: center; /* Botões centralizados */
+}
+
+/* Ajuste Mobile para a nova fonte gigante */
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 2.8rem; } /* Reduz no celular para caber */
+    .hero-text p { font-size: 1.1rem; }
+}
