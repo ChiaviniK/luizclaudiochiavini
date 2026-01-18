@@ -434,3 +434,76 @@ footer {
     .hero-text h1 { font-size: 2.8rem; } /* Reduz no celular para caber */
     .hero-text p { font-size: 1.1rem; }
 }
+
+
+
+/* --- RESTAURANDO O LAYOUT LADO-A-LADO --- */
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Volta a separar texto e foto */
+    padding: 0 20px;
+    width: 100%;
+    text-align: left; /* Texto alinhado à esquerda novamente */
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    /* Voltamos aos tamanhos de fonte originais, mais equilibrados com a foto */
+}
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.hero-text p { font-size: 1.1rem; margin-bottom: 2rem; max-width: none; }
+.hero-btns { justify-content: flex-start; }
+
+/* --- NOVO ESTILO MINIMALISTA DA FOTO --- */
+.hero-img-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centraliza a foto no espaço dela */
+}
+
+.author-photo {
+    width: 100%;
+    max-width: 420px; /* Tamanho generoso, mas não exagerado */
+    height: auto;
+    object-fit: cover;
+    
+    /* O minimalismo está aqui: */
+    border-radius: 16px; /* Cantos arredondados modernos e suaves */
+    
+    /* Borda sutilíssima dourada para acabamento premium */
+    border: 1px solid rgba(212, 175, 55, 0.2); 
+    
+    /* Sombra difusa e colorida (vinho claro) para profundidade sem peso */
+    box-shadow: 0 30px 60px -15px rgba(74, 14, 18, 0.25);
+    
+    transition: transform 0.5s ease;
+}
+
+/* Efeito muito sutil ao passar o mouse */
+.author-photo:hover {
+    transform: translateY(-5px); /* Levanta levemente */
+}
+
+
+/* --- CONFIRA SE O MOBILE ESTÁ ASSIM (no final do arquivo) --- */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse; /* Foto em cima no celular */
+        text-align: center;
+    }
+    .hero-btns { justify-content: center; }
+    
+    .author-photo {
+        max-width: 280px; /* Um pouco menor no celular */
+        margin-bottom: 2rem;
+        /* Mantém o estilo minimalista */
+        border-radius: 12px;
+        box-shadow: 0 20px 40px -10px rgba(74, 14, 18, 0.2);
+    }
+    
+    .hero-text h1 { font-size: 2.5rem; } /* Fonte ajustada para mobile */
+}
