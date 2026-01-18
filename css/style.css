@@ -507,3 +507,48 @@ footer {
     
     .hero-text h1 { font-size: 2.5rem; } /* Fonte ajustada para mobile */
 }
+
+
+
+/* --- ESTILO REDONDO PROFISSIONAL --- */
+
+.hero-img-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centraliza */
+}
+
+.author-photo {
+    width: 380px;  /* Largura fixa */
+    height: 380px; /* Altura idêntica para ser um círculo perfeito */
+    object-fit: cover; /* Garante que a foto preencha o círculo sem esticar */
+    
+    border-radius: 50%; /* O corte redondo */
+    
+    /* Moldura dupla fina: Branco interno + Dourado sutil externo */
+    border: 6px solid #fff; 
+    outline: 1px solid rgba(212, 175, 55, 0.5); /* Aquele dourado fino elegante */
+    
+    /* Sombra suave para "descolar" do fundo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito ao passar o mouse */
+.author-photo:hover {
+    transform: scale(1.02); /* Cresce um pouquinho */
+    box-shadow: 0 25px 50px rgba(74, 14, 18, 0.15); /* Sombra fica levemente Vinho */
+}
+
+/* --- AJUSTE PARA CELULAR (No final do arquivo) --- */
+@media (max-width: 768px) {
+    /* ... (outros códigos mobile) ... */
+    
+    .author-photo {
+        width: 240px;  /* Menor no celular */
+        height: 240px; /* Mantém proporção quadrada */
+        margin-bottom: 2rem;
+        border-width: 4px; /* Borda um pouco mais fina */
+    }
+}
