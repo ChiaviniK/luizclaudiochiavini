@@ -220,3 +220,46 @@ footer {
     .btn-text { border: 1px solid var(--wine-light); border-radius: 4px; padding: 0.6rem; }
     .close { font-size: 2.5rem; background: rgba(255,255,255,0.9); width: 40px; height: 40px; text-align: center; line-height: 40px; border-radius: 50%; }
 }
+
+/* --- ESTILO PARA LIVROS "EM BREVE" --- */
+
+.book-placeholder {
+    width: 200px; /* Largura padrão de livro */
+    height: 100%; /* Ocupa a altura do container (300px) */
+    background-color: #f9f9f9; /* Fundo bem clarinho */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+    /* Borda pontilhada Dourada (sugere construção) */
+    border: 2px dashed var(--gold); 
+    border-radius: 5px;
+    
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.book-placeholder i {
+    font-size: 2.5rem;
+    color: var(--gold); /* Ícone Dourado */
+    opacity: 0.6;
+}
+
+.book-placeholder span {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--wine-light); /* Texto Vinho */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Efeito sutil ao passar o mouse no card */
+.book-card:hover .book-placeholder {
+    background-color: #fff8e1; /* Fica levemente amarelado */
+    border-color: var(--wine-light); /* Borda vira vinho */
+}
+
