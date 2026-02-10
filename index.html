@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site oficial do autor Luiz Cláudio Chiavini Oliveira. Conheça suas obras e leia demos exclusivos.">
+    <meta name="description" content="Site oficial do autor Luiz Cláudio Chiavini Oliveira. Conheça suas obras, incluindo 'Efeito Jesus'.">
     <title>Luiz Cláudio Chiavini | Autor</title>
     
     <link rel="stylesheet" href="css/style.css">
@@ -17,48 +17,49 @@
 <body>
 
     <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-        <a href="#" class="logo">L.C. Chiavini</a>
-        
-        <div class="hamburger" id="hamburger-btn">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+        <div class="container nav-container">
+            <a href="#" class="logo">L.C. Chiavini</a>
+            
+            <div class="hamburger" id="hamburger-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
-            <li><a href="#livros" onclick="closeMenu()">Livros</a></li>
-            <li><a href="https://www.instagram.com/luizclaudiochiavini/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-    </div>
-</nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#livros" onclick="closeMenu()">Livros</a></li>
+                <li><a href="https://www.instagram.com/luizclaudiochiavini/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </nav>
 
     <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content hidden-element">
-    <div class="hero-text">
-        <span class="tagline">Literatura & Inspiração</span>
-        <h1>Histórias que marcam a alma</h1>
-        <p>Bem-vindo ao universo literário de Luiz Cláudio Chiavini Oliveira.</p>
-        <div class="hero-btns">
-            <a href="#livros" class="btn btn-primary">Ver Obras</a>
-            <a href="#sobre" class="btn btn-outline">O Autor</a>
+        <div class="container hero-content hidden-element">
+            <div class="hero-text">
+                <span class="tagline">Literatura & Inspiração</span>
+                <h1>Histórias que marcam a alma</h1>
+                <p>Bem-vindo ao universo literário de Luiz Cláudio Chiavini Oliveira.</p>
+                <div class="hero-btns">
+                    <a href="#livros" class="btn btn-primary">Ver Obras</a>
+                    <a href="#sobre" class="btn btn-outline">O Autor</a>
+                </div>
+            </div>
+            
+            <div class="hero-img-wrapper">
+                <img src="assets/img/autor-perfil.jpg" alt="Luiz Cláudio Chiavini" class="author-photo">
+            </div>
         </div>
-    </div>
-
-    <div class="hero-img-wrapper">
-        <img src="assets/img/autor.jpg" alt="Luiz Cláudio Chiavini" class="author-photo">
-    </div>
-    </div>
-</header>
+    </header>
 
     <section id="sobre" class="about-section">
         <div class="container">
             <div class="section-header hidden-element">
                 <h2>Sobre o Autor</h2>
                 <div class="separator"></div>
-                <p>Apaixonado por criar mundos e transformar realidades através da escrita.</p>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #666;">
+                    Professor universitário, doutorando e escritor. Luiz Cláudio une conhecimento acadêmico e sensibilidade espiritual para criar obras que transformam vidas.
+                </p>
             </div>
         </div>
     </section>
@@ -71,17 +72,21 @@
             </div>
             
             <div class="books-grid">
+                
                 <article class="book-card hidden-element">
                     <div class="card-inner">
                         <div class="book-cover-3d">
-                            <img src="assets/img/capa-livro-1.jpg" alt="Capa Livro 1">
+                            <img src="assets/img/livroEfeitoJesus.png" alt="Capa Efeito Jesus">
                         </div>
                         <div class="book-details">
-                            <h3>Título da Obra 01</h3>
-                            <p>Uma sinopse envolvente que prende o leitor logo nas primeiras linhas. O mistério e a emoção se encontram aqui.</p>
+                            <h3>Efeito Jesus</h3>
+                            <span class="book-subtitle">Na Sala de Aula com o Mestre</span>
+                            <p>Um convite para uma profunda transformação espiritual. Uma jornada de 40 dias de aprendizado e renovação através do ensino de Cristo.</p>
                             <div class="book-actions">
-                                <button onclick="openModal('modal1')" class="btn-text">Ler Demo <i class="fas fa-book-open"></i></button>
-                                <a href="#" class="btn-shop">Amazon <i class="fab fa-amazon"></i></a>
+                                <button onclick="openModal('modal1')" class="btn-text">Ler Sinopse <i class="fas fa-book-open"></i></button>
+                                <a href="https://clubedeautores.com.br//livro/efeito-jesus" target="_blank" class="btn-shop">
+                                    Comprar <i class="fas fa-shopping-cart"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,11 +98,12 @@
                             <img src="assets/img/capa-livro-2.jpg" alt="Capa Livro 2">
                         </div>
                         <div class="book-details">
-                            <h3>Título da Obra 02</h3>
-                            <p>Uma jornada épica através de cenários inesquecíveis. Descubra o que torna esta história única.</p>
+                            <h3>Em Breve</h3>
+                            <span class="book-subtitle">Nova Obra</span>
+                            <p>O próximo lançamento do autor está sendo preparado com carinho. Aguarde novidades sobre esta história.</p>
                             <div class="book-actions">
-                                <button onclick="openModal('modal2')" class="btn-text">Ler Demo <i class="fas fa-book-open"></i></button>
-                                <a href="#" class="btn-shop">Amazon <i class="fab fa-amazon"></i></a>
+                                <button class="btn-text" disabled style="opacity: 0.5; cursor: default;">Indisponível</button>
+                                <a href="#" class="btn-shop" style="background: #ccc; pointer-events: none;">Aguarde</a>
                             </div>
                         </div>
                     </div>
@@ -109,15 +115,17 @@
                             <img src="assets/img/capa-livro-3.jpg" alt="Capa Livro 3">
                         </div>
                         <div class="book-details">
-                            <h3>Título da Obra 03</h3>
-                            <p>Romance, drama e reviravoltas. O desfecho desta trilogia que vai surpreender você.</p>
+                            <h3>Em Breve</h3>
+                            <span class="book-subtitle">Nova Obra</span>
+                            <p>O terceiro livro da coleção será anunciado em breve. Acompanhe as redes sociais para saber mais.</p>
                             <div class="book-actions">
-                                <button onclick="openModal('modal3')" class="btn-text">Ler Demo <i class="fas fa-book-open"></i></button>
-                                <a href="#" class="btn-shop">Amazon <i class="fab fa-amazon"></i></a>
+                                <button class="btn-text" disabled style="opacity: 0.5; cursor: default;">Indisponível</button>
+                                <a href="#" class="btn-shop" style="background: #ccc; pointer-events: none;">Aguarde</a>
                             </div>
                         </div>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
@@ -125,7 +133,7 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-logo">L.C. Chiavini</div>
-            <p>&copy; 2026. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Luiz Cláudio Chiavini Oliveira. Todos os direitos reservados.</p>
             <div class="footer-social">
                 <a href="https://www.instagram.com/luizclaudiochiavini/"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
@@ -136,16 +144,27 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal1')">&times;</span>
             <div class="modal-header">
-                <h3>Capítulo 1: O Início</h3>
+                <h3>Efeito Jesus: Na Sala de Aula Com o Mestre</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                    <strong>Autores:</strong> Luiz Cláudio Chiavini & André Luiz Araújo Oliveira
+                </p>
             </div>
             <div class="modal-body">
-                <p>Insira o texto do demo aqui...</p>
+                <p><strong>Sinopse Oficial</strong></p>
+                <p>O <em>Efeito Jesus</em> é um convite para uma profunda transformação espiritual através do ensino e exemplo de Cristo. O livro explora a importância de reconhecer nossa identidade como obra-prima de Deus e a necessidade de restauração espiritual após a queda da humanidade.</p>
+                <p>A obra destaca como Jesus, o único capaz de reparar nossas falhas, nos guia para uma vida plena e significativa, baseada no amor, conhecimento e obediência a Deus.</p>
+                <p>Através de <strong>40 capítulos</strong> — em alusão aos 40 dias de retiro de Jesus no deserto — o leitor será conduzido por uma jornada de aprendizado e renovação, encontrando respostas para seus dilemas e fortalecendo sua fé.</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 2rem 0;">
+                <p><small><strong>Categorias:</strong> Inspiracional & Religioso, Espiritualidade, Vida Cristã, Família e Relacionamentos.</small></p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://clubedeautores.com.br//livro/efeito-jesus" target="_blank" class="btn btn-primary">
+                        Adquirir Exemplar Físico ou Digital
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="js/script.js"></script>
 </body>
-
 </html>
-
-
